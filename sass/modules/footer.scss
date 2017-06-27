@@ -1,0 +1,53 @@
+.footer {
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  &__container {
+    width: 100%;
+    max-width: 1170px;
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0 60px 0;
+    padding: 0 20px 0 20px;
+    box-sizing: border-box;
+  }
+
+
+  &__email, &__tel, &__address {
+    font-family: Lato-Semibold;
+    font-size: 22px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-style: normal;
+  }
+
+
+  &__copy {
+    font-family: Lato-Semibold;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+
+}
+
+
+@media screen and (max-width: 920px) {
+  .footer {
+
+    &__container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    &__email, &__tel, &__address {
+      margin-bottom: 10px;
+    }
+
+  }
+
+}

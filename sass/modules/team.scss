@@ -1,0 +1,134 @@
+.team {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #1A0E24;
+
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    width: 1170px;
+    height: 550px;
+  }
+}
+
+.member {
+  width: 50%;
+  height: 100%;
+  position: relative;
+
+
+  &--man {
+    background: url(./../img/man.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+
+  &--woman {
+    background: url(./../img/woman.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+
+
+    &--man {
+      opacity: 0;
+      transition: 0.2s;
+      background-image: -webkit-linear-gradient(bottom left, rgba(162, 52, 213, 0.59) 0%, rgba(215,64,88,0.16) 100%);
+      background-image: -o-linear-gradient(bottom left, rgba(162, 52, 213, 0.59) 0%, rgba(215,64,88,0.16) 100%);
+      background-image: linear-gradient(to top right, rgba(162, 52, 213, 0.59) 0%, rgba(215,64,88,0.16) 100%);
+
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+
+    &--woman {
+      opacity: 0;
+      transition: 0.2s;
+      background-image: -webkit-linear-gradient(bottom left, rgba(162, 52, 213, 0.59) 0%, rgba(215,64,88,0.16) 100%);
+      background-image: -o-linear-gradient(bottom left, rgba(162, 52, 213, 0.59) 0%, rgba(215,64,88,0.16) 100%);
+      background-image: linear-gradient(to top right, rgba(162, 52, 213, 0.59) 0%, rgba(215,64,88,0.16) 100%);
+
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+  }
+
+
+  &__name {
+    font-family: Lato-Bold;
+    font-size: 48px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+
+
+  &__position {
+    font-family: Lato-Bold;
+    font-size: 30px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+
+
+  &__desc {
+    max-width: 400px;
+    font-family: Lato-Light;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+
+  &__buttons {
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  &__button {
+    @include button();
+
+
+    &:hover, &:focus {
+      @include buttonHover();
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 720px) {
+  .team__container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .member {
+    height: 550px;
+    width: 100%;
+  }
+}

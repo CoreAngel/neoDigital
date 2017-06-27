@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+@import "normalize.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@import "animation.scss";
+@import "mixins.scss";
+
+@import "modules/typografy.scss";
+@import "modules/header.scss";
+@import "modules/headFooter.scss";
+@import "modules/service.scss";
+@import "modules/partners.scss";
+@import "modules/team.scss";
+@import "modules/find.scss";
+@import "modules/footer.scss";

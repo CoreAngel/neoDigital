@@ -1,0 +1,260 @@
+.header {
+  width: 100%;
+  height: 100vh;
+  min-height: 750px;
+  background: url(../img/bg.jpg) no-repeat center;
+  background: radial-gradient(circle at center calc(-80vh), rgba(211,63,99,.5), rgba(162,52,213,0)), url(../img/bg.jpg) no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1170px;
+  }
+
+}
+
+.navBarContainer {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoContainer {
+  margin-left: 20px;
+  margin-right: 20px;
+
+
+  &__logo {
+    text-decoration: none;
+  }
+
+
+  &__menuButton {
+    background: none;
+    border: none;
+    display: none;
+  }
+
+
+  &__link {
+    text-decoration: none;
+  }
+
+}
+
+.logo__first {
+  font-family: Arkhip;
+  font-size: 30px;
+  background-image: linear-gradient(90deg, rgb(162,52,213), rgb(215,64,89));
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  -ms-background-clip: text;
+  background-clip: text;
+}
+
+.logo__secound {
+  font-family: Arkhip;
+  font-size: 30px;
+  color: #FFFFFF;
+}
+
+.navigation {
+  margin-right: 20px;
+  display: flex;
+
+
+  &__item {
+    list-style-type: none;
+    margin-left: 10px;
+
+
+    &:first-child {
+      margin-left: 0;
+      position: relative;
+
+
+      & .navigation__link:after {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        content: "";
+        width: calc(100% - 20px);
+        height: 100%;
+        border-bottom: 3px solid rgb(162,52,213);
+        border-image: linear-gradient(100deg, rgb(162,52,213), rgb(215,63,89));
+        border-image-slice: 1;
+      }
+
+    }
+
+
+    &:last-child {
+      border: 3px solid rgb(162,52,213);
+      border-image: linear-gradient(100deg, rgb(162,52,213), rgb(215,63,89));
+      border-image-slice: 1;
+    }
+
+  }
+
+
+  &__link {
+    padding: 10px;
+    display: block;
+    font-family: Lato-Bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+
+}
+
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 0 20px;
+
+
+  &__title {
+    text-align: center;
+    font-family: Lato-Bold;
+    font-size: 56px;
+    color: #EDEDED;
+    letter-spacing: 0.2px;
+    margin-bottom: 45px;
+  }
+
+
+  &__text {
+    max-width: 600px;
+    font-family: Lato-Light;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 20px;
+
+
+    &--bold {
+      font-family: Lato-Heavy;
+    }
+  }
+
+
+  &__button {
+    @include button();
+    margin-top: 60px;
+
+
+    &:hover, &:focus {
+      @include buttonHover();
+    }
+
+  }
+
+}
+
+
+.headerArrow {
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
+  position: relative;
+  width: 21px;
+  height: 21px;
+  transform: rotate(-45deg);
+  opacity: 0;
+  animation: arrow 1s infinite;
+
+
+  &:after {
+    content: "";
+    display: block;
+    position: relative;
+    left: -18px;
+    top: -12px;
+    height: 50px;
+    width: 50px;
+  }
+
+}
+
+
+@media screen and (max-width: 700px) {
+  .navBarContainer {
+    background: black;
+    margin-top: 0;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .navigation {
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-right: 0;
+    top: 70px;
+    left: 0;
+    background: black;
+    height: auto;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.15s;
+    margin-top: 16px;
+
+
+    &--open {
+      transform: scaleY(1);
+    }
+
+
+    &__item {
+      position: relative;
+      text-align: center;
+      margin: 0;
+
+
+      &:last-child {
+        border: none;
+      }
+
+
+      &:first-child .navigation__link:after {
+        display: none;
+      }
+    }
+  }
+
+
+  .logoContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+
+    &__menuButton {
+      cursor: pointer;
+      color: white;
+      display: block;
+      font-size: 25px;
+    }
+  }
+
+}
+

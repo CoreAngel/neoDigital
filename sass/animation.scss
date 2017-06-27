@@ -1,0 +1,13 @@
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    bottom: 60px;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    bottom: 30px;
+  }
+}
