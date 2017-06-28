@@ -52,9 +52,13 @@
     cursor: pointer;
     font-family: Lato-Medium;
     font-size: 22px;
-    color: #FFFFFF;
   }
 
+
+  &__link {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
 
   &__magicLine {
     position: relative;
