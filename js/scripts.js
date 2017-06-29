@@ -123,6 +123,7 @@
     document.querySelectorAll('a[href^="#"]').forEach(function (button) {
         button.addEventListener('click', function(e){
             e.preventDefault();
+            window.location = button.getAttribute("href");
             smoothScroll(document.querySelector(button.getAttribute("href")), 500);
         });
     })
