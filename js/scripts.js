@@ -121,7 +121,8 @@
     });
 
     document.querySelectorAll('a[href^="#"]').forEach(function (button) {
-        button.addEventListener('click', function(){
+        button.addEventListener('click', function(e){
+            e.preventDefault();
             smoothScroll(document.querySelector(button.getAttribute("href")), 500);
         });
     })
