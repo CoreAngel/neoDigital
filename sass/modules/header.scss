@@ -235,6 +235,9 @@
     margin-top: 18px;
     padding-bottom: 3px;
 
+    &--invisible {
+      display: none;
+    }
 
     &--open {
       transform: scaleY(1);

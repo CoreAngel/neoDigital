@@ -28,19 +28,40 @@
 
   .partners {
     padding: 50px 0 50px 0;
+
+
+    &__img {
+      height: calc(100vw/20);
+    }
+
   }
+
 }
 
 @media screen and (max-width: 700px) and (min-width: 401px) {
 
   .partners {
     padding: 40px 0 40px 0;
+
+
+    &__img {
+      height: calc(100vw/20);
+    }
+
   }
+
 }
 
 @media screen and (max-width: 400px) {
 
   .partners {
     padding: 30px 0 30px 0;
+
+
+    &__img {
+      height: calc(100vw/20);
+    }
+
   }
+
 }

@@ -52,7 +52,7 @@
         }
     }
 
-    var smoothScroll = function (to, time) {
+    var smoothScroll = function (to, time, e) {
         var directory,
             distance;
 
@@ -63,6 +63,7 @@
             directory = 'up';
             distance = tempDistance * (-1);
         }else if(tempDistance == 0) {
+            window.location.hash = e.target.getAttribute("href");
             return;
         } else {
             directory = 'down';
@@ -78,6 +79,7 @@
                 x+=step;
                 if(x >= 1) {
                     clearInterval(interval);
+                    window.location.hash = e.target.getAttribute("href");
                 }
                 window.scrollTo(0, startScrollTop+(number*distance));
             }, 5)
@@ -88,6 +90,7 @@
                 x+=step;
                 if(x >= 1) {
                     clearInterval(interval);
+                    window.location.hash = e.target.getAttribute("href");
                 }
                 window.scrollTo(0, startScrollTop-(number*distance));
             }, 5)
@@ -115,16 +118,17 @@
     document.querySelector("#menuButton").addEventListener('click', function(){
         if(document.querySelector(".navigation").classList.contains('navigation--open')) {
             document.querySelector(".navigation").classList.remove('navigation--open');
+            setTimeout(() => document.querySelector(".navigation").classList.add('navigation--invisible'), 100)
         } else {
-            document.querySelector(".navigation").classList.add('navigation--open');
+            document.querySelector(".navigation").classList.remove('navigation--invisible');
+            setTimeout(() => document.querySelector(".navigation").classList.add('navigation--open'), 10);
         }
     });
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (button) {
+    document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(function (button) {
         button.addEventListener('click', function(e){
             e.preventDefault();
-            window.location = button.getAttribute("href");
-            smoothScroll(document.querySelector(button.getAttribute("href")), 500);
+            smoothScroll(document.querySelector(button.getAttribute("href")), 500, e);
         });
     })
 
