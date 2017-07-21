@@ -96,6 +96,14 @@
         }
     };
 
+    let mobileMenu = function () {
+        if(window.innerWidth <= 700)
+            document.querySelector("#header").classList.add('header--mobile');
+        if(window.innerWidth > 700)
+            document.querySelector("#header").classList.remove('header--mobile');
+
+    }
+
 
     document.querySelector("#serviceNavTabs__list").addEventListener('click', function(e){
         changeTabs(e);
@@ -114,10 +122,12 @@
 
     document.querySelector("#menuButton").addEventListener('click', function(){
         if(document.querySelector(".navigation").classList.contains('navigation--open')) {
+            document.querySelector("#menuButton").setAttribute("aria-expanded", "false");
             document.querySelector(".navigation").classList.remove('navigation--open');
             setTimeout(() => document.querySelector(".navigation").classList.add('navigation--invisible'), 100)
         } else {
             document.querySelector(".navigation").classList.remove('navigation--invisible');
+            document.querySelector("#menuButton").setAttribute("aria-expanded", "true");
             setTimeout(() => document.querySelector(".navigation").classList.add('navigation--open'), 10);
         }
     });
@@ -128,5 +138,9 @@
             smoothScroll(document.querySelector(button.getAttribute("href")), 500, e);
         });
     })
+
+    document.addEventListener("DOMContentLoaded", mobileMenu);
+    window.addEventListener("resize", mobileMenu);
+    window.addEventListener("orientationchange", mobileMenu);
 
 })();

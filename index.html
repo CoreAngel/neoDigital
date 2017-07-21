@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>neoDigital</title>
@@ -21,10 +21,11 @@
             <div class="navBarContainer" id="navBarContainer">
                 <div class="logoContainer">
                     <h1 class="logoContainer__logo"><a class="logoContainer__link" href=""><span class="logo__first">neo</span><span class="logo__secound">Digital</span></a></h1>
-                    <button class="logoContainer__menuButton" id="menuButton">&#9776;</button>
+                    <span class="logoContainer__label">Open/Close menu</span>
+                    <button class="logoContainer__menuButton" aria-controls="navigation" aria-expanded="false" id="menuButton"></button>
                 </div>
                 <nav>
-                    <ul class="navigation navigation--invisible">
+                    <ul class="navigation navigation--invisible" id="navigation">
                         <li class="navigation__item"><a class="navigation__link" href="#header">Welcome</a></li>
                         <li class="navigation__item"><a class="navigation__link" href="#service">Services</a></li>
                         <li class="navigation__item"><a class="navigation__link" href="#team">About</a></li>
